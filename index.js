@@ -8,16 +8,16 @@
 */
 
 // EXAMPLE SOLUTION CODE:
-function Airplane(name) {
-    this.name = name;
-    this.isFlying = false;
-  }
-  Airplane.prototype.takeOff = function () {
-    this.isFlying = true;
-  };
-  Airplane.prototype.land = function () {
-    this.isFlying = false;
-  };
+// function Airplane(name) {
+//     this.name = name;
+//     this.isFlying = false;
+//   }
+//   Airplane.prototype.takeOff = function () {
+//     this.isFlying = true;
+//   };
+//   Airplane.prototype.land = function () {
+//     this.isFlying = false;
+//   };
   
   
   /*
@@ -39,17 +39,43 @@ function Airplane(name) {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- function Person() {
-    
+function Person(name, age) {
+  this.name = name,
+  this.age = age,
+    this.stomache = [];
+}
+Person.prototype.eat = function (edible) {
+  if (this.stomach.length < 10) {
+    this.stomach.push(edible);
   }
- 
- 
+}
+Person.prototype.poop = function () {
+  this.stomach = [];
+}
+Person.prototype.toString = function () {
+  return `${this.name}, ${this.age}`;
+}
+const josh = new Person('Josh', 33);
 
-  
-  
-  
-  
-  /*
+josh.eat('pizza');
+josh.eat('apple');
+josh.eat('cake');
+// josh.eat('potatos');
+// josh.eat('carrots');
+// josh.eat('yogurt');
+// josh.eat('burgers');
+// josh.eat('tacos');
+// josh.eat('candy');
+// josh.eat('sushi');
+// josh.eat('bread');
+// josh.eat('sandwiches');
+
+console.log(josh.stomach);
+josh.poop();
+console.log(josh.stomach);
+
+
+   /*
     TASK 2
       - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
       - All instances built with Car:
@@ -63,9 +89,24 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
-    
+ function Car(/*model, milesPerGallon*/) {
+      
   }
+
+  // function Car(model, milesPerGallon) {
+  //   this.greeting = 'Hello ';
+  //   this.greeter = greeter;
+  //   this.speak = function() {
+  //     console.log(this.greeting + this.greeter);
+  //     console.log(this);
+  //   };
+  // }
+  
+  // const jerry = new CordialPerson('Newman');
+  // const newman = new CordialPerson('Jerry');
+  
+  // jerry.speak();
+  // newman.speak();
   
   
   /*
